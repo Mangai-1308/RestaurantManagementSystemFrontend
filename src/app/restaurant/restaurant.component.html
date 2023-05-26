@@ -1,0 +1,119 @@
+<form class="search-bar">
+  <input type="text"  placeholder="Search your restaurant" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}">
+  <button type="submit" (click)="onSearch()">Search</button>
+</form>
+<br>
+<div class="button-container">
+  <button type="button" class="btn btn-dark btn-rounded" (click)="onClick()">All restaurant</button>
+  <button type="button" class="btn btn-dark btn-rounded" (click)="onClickfood('veg')">Vegetarian</button>
+  <button type="button" class="btn btn-dark btn-rounded" (click)="onClickfood('non-veg')">Non-Vegetarian</button>
+</div>
+<br>
+
+<div class="error-box" *ngIf="!errorshow" >
+  <p><img src="./assets/chick.png" style="width: 50px; height: 50px;">"We're sorry, we burnt the toast! Please try again later."</p>
+  </div>
+
+  <div class="error-box" *ngIf="!errorshowmsg" >
+    <p><img src="./assets/cracking-egg.png" style="width: 50px; height: 50px;">"Oops! Our chef has gone on a world tour. We'll be back soon!"</p>
+    </div>
+  
+  <div class="container" style="margin-top:50px;">
+    <div class="row">
+        <div class="col-lg-4 mb-4" *ngFor="let hotel of allRestaurant">
+            <div class="card-sl">
+                <div class="card-image">
+                    <img src= {{hotel.image}} >
+                </div>
+
+                <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                <div class="card-heading">
+                  {{hotel.restaurant_name}}
+                </div>
+                <div class="card-text" style="font-style: italic;">
+                  "{{hotel.description}}"
+                </div>
+                <div class="card-text">
+                  <a href="" class="btn btn-success btn-sm" ><i class="fa fa-star">{{hotel.rating}}</i></a> &nbsp;
+                  <a href="" class="btn btn-danger btn-sm">{{hotel.type_of_food}}</a>
+                </div>
+                <a href={{hotel.url}} class="card-button" (click)="onLoad()"> OrderNow</a>
+            </div>
+        </div>
+    </div>  
+  <br><br><br><br><br>
+
+  <div class="text-center" *ngIf="!isloading">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+<footer class="page-footer font-small  pt-4 " style="background-color: #F8F4EA;">
+
+ 
+  <div class="container-fluid text-center text-md-left">
+
+    <div class="row">
+
+      
+      <div class="col-md-6 mt-md-0 mt-3">
+        <img class="footerimage" src="./assets/logo.jpg">
+      </div>
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <div class="col-md-3 mb-md-0 mb-3" >
+
+        <h5 class="text-uppercase">DELICIOUS</h5>
+
+        <ul class="list-unstyled" style="text-decoration: none;">
+          <li>
+            <P style="font-size: 15px;font-style: italic;">About Delicious</P>
+          </li>
+          <li>
+            <P style="font-size: 15px;font-style: italic;">Blog</P>
+          </li>
+          <li>
+            <P style="font-size: 15px;font-style: italic;">Work with us</P>
+          </li>
+          <li>
+            <P style="font-size: 15px;font-style: italic;">Contact Us</P>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <h5 class="text-uppercase">Contact us</h5>
+
+        <ul class="list-unstyled">
+          <li>
+           <p style="font-size: 15px;font-style: italic;"> delicious@gmail.com</p>
+          </li>
+          <li>
+            <p style="font-size: 15px;font-style: italic;">+91-8902567834</p>
+          </li>
+          <li>
+           <p style="font-size: 15px;font-style: italic;">Guindy, Chennai</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="/"> Delicious.com</a>
+  </div>
+
+</footer>
+
+
+
+ 
+
+
+
+<router-outlet></router-outlet>

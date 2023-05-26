@@ -1,0 +1,112 @@
+
+/* Div with image text overlay */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin-top: 90px;
+  padding-bottom: 56.25%; /* This creates a 16:9 aspect ratio */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-text {
+  position: absolute;
+  top: 35%;
+  left: 195px;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+}
+/* Cusine Section */
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  
+  margin: 3%;
+}
+.example-card {
+  width: 300px;
+  height: 60vh;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.example-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+/* view restaurant button */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #809A6F;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-left: 210px;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+
+/* About us Section */
+/* .image img {
+  width: 90%;
+  height: 90%;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text p {
+  font-size: 16px;
+  line-height: 1.5;
+  font-style: italic;
+  margin-top: 170px;
+  margin-left: 20px;
+} */
+
+/* About us Section */
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.3s;
+}
+
+.image {
+  flex: 1.5;
+}
+
+.text {
+  flex: 1.5;
+  padding: 0 20px;
+} */
+
+
+
+
+
